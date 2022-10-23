@@ -3,3 +3,9 @@ runner = "wasm-server-runner"
 
 [build]
 target = "wasm32-unknown-unknown"
+
+[target.'cfg(not(target_arch = "wasm32"))']
+rustflags = ["--cfg", "native"]
+
+[target.'cfg(target_arch = "wasm32")']
+rustflags = ["--cfg", "wasm"]

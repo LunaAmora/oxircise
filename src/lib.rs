@@ -2,6 +2,10 @@
 #[macro_export]
 macro_rules! log {
     ( $( $t:tt )* ) => {
+        #[cfg(wasm)]
         web_sys::console::log_1(&format!( $( $t )* ).into());
+
+        #[cfg(not(wasm))]
+        println!($( $t )*);
     }
 }
