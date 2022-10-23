@@ -7,7 +7,14 @@ readme = "README.md"
 license-file = "LICENSE"
 
 [dependencies]
-bevy = { version = "0.8.1", features = ["dynamic"] }
+bevy = { version = "0.8.1" }
+console_error_panic_hook = "0.1"
+
+[dependencies.web-sys]
+version = "0.3"
+features = [
+  "console",
+]
 
 # Enable a small amount of optimization in debug mode
 [profile.dev]
@@ -16,3 +23,7 @@ opt-level = 1
 # Enable high optimizations for dependencies (incl. Bevy), but not for our code:
 [profile.dev.package."*"]
 opt-level = 3
+
+[lib]
+name = "oxilib"
+path = "src/lib.rs"
