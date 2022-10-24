@@ -28,6 +28,7 @@ features = [
   "bevy_sprite",        # 2D (sprites) rendering
 #   "bevy_text",          # Text/font rendering
 #   "bevy_ui",            # UI toolkit
+  "x11",
 
   # File formats:
   "png"
